@@ -79,13 +79,13 @@
             "path": "nsg:traversedBrainRegion",
             "name": "Traversed brain regions",
             "description": "Brain regions being traversed by neurites of this category",
-            "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
+            "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape"
           },
           {
             "path": "nsg:projectionBrainRegion",
             "name": "Projection brain regions",
             "description": "Brain regions where neurites of this category have their projection (i.e. where they terminate)",
-            "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
+            "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape"
           }
         ]
         }
