@@ -8,7 +8,7 @@
   "@id": "https://neuroshapes.org/dash/neuronmorphology",
   "@type": "nxv:Schema",
   "imports": [
-    "https://neuroshapes.org/core/dataset",
+    "https://neuroshapes.org/commons/minds",
     "https://neuroshapes.org/commons/quantitativevalue",
     "https://neuroshapes.org/commons/brainlocation",
     "https://neuroshapes.org/commons/typedlabeledontologyterm",
@@ -25,7 +25,7 @@
       "nodeKind": "sh:BlankNodeOrIRI",
       "and": [
         {
-          "node": "https://neuroshapes.org/core/dataset/shapes/DatasetShape"
+          "node": "https://neuroshapes.org/commons/minds/shapes/MINDSShape"
         },
         {
           "property": [
