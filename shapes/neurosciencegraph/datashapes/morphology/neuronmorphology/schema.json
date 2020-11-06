@@ -11,7 +11,8 @@
     "https://neuroshapes.org/core/dataset",
     "https://neuroshapes.org/commons/quantitativevalue",
     "https://neuroshapes.org/commons/brainlocation",
-    "https://neuroshapes.org/commons/typedlabeledontologyterm"
+    "https://neuroshapes.org/commons/typedlabeledontologyterm",
+    "https://neuroshapes.org/commons/collection"
   ],
   "shapes": [
     {
@@ -28,11 +29,6 @@
         },
         {
           "property": [
-            {
-              "path": "nsg:isRegisteredIn",
-              "class": "nsg:BrainAtlasSpatialReferenceSystem",
-              "maxCount": 1
-            },
             {
               "path": "nsg:somaNumberOfPoints",
               "name": "Soma number of points",
@@ -53,47 +49,45 @@
     {
       "@id": "this:NeuriteFeature",
       "@type": "sh:NodeShape",
-      "property": [
+      "and": [
         {
-          "path": "rdf:type",
-          "name": "Type",
-          "description": "The neurite type",
-          "in": [
-            "nsg:Axon",
-            "nsg:Dendrite",
-            "nsg:BasalDendrite",
-            "nsg:ApicalDendrite"
-          ],
-          "nodeKind": "sh:IRI",
-          "maxCount": 1
+          "node": "https://neuroshapes.org/commons/collection/shapes/CollectionShape"
         },
         {
-          "path": "schema:size",
-          "name": "Size",
-          "description": "The size (number) of elements",
-          "datatype": "xsd:int",
-          "maxCount": 1
-        },
-        {
-          "path": "nsg:cumulatedLength",
-          "name": "Cumulated length",
-          "description": "Total length of a neurite category",
-          "node": "https://neuroshapes.org/commons/quantitativevalue/shapes/QuantitativeValueShape",
-          "maxCount": 1
-        },
-        {
-          "path": "nsg:traversedBrainRegion",
-          "name": "Traversed brain regions",
-          "description": "Brain regions being traversed by all the neurites of this category",
-          "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
-          "maxCount": 1
-        },
-        {
-          "path": "nsg:projectionBrainRegion",
-          "name": "Projection brain regions",
-          "description": "Brain regions where all the neurites of this category have their projection (end)",
-          "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
-          "maxCount": 1
+        "property": [
+          {
+            "path": "rdf:type",
+            "name": "Type",
+            "description": "The neurite type",
+            "in": [
+              "nsg:Axon",
+              "nsg:Dendrite",
+              "nsg:BasalDendrite",
+              "nsg:ApicalDendrite"
+            ],
+            "nodeKind": "sh:IRI",
+            "minCount": 1
+          },
+          {
+            "path": "nsg:cumulatedLength",
+            "name": "Cumulated length",
+            "description": "Total length of a neurite category",
+            "node": "https://neuroshapes.org/commons/quantitativevalue/shapes/QuantitativeValueShape",
+            "maxCount": 1
+          },
+          {
+            "path": "nsg:traversedBrainRegion",
+            "name": "Traversed brain regions",
+            "description": "Brain regions being traversed by neurites of this category",
+            "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
+          },
+          {
+            "path": "nsg:projectionBrainRegion",
+            "name": "Projection brain regions",
+            "description": "Brain regions where neurites of this category have their projection (i.e. where they terminate)",
+            "node": "https://neuroshapes.org/commons/typedlabeledontologyterm/shapes/BrainRegionOntologyTermShape",
+          }
+        ]
         }
       ]
     }
